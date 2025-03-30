@@ -1,0 +1,30 @@
+
+<button (click)="addTask()">Add Task</button><br/>
+<input [(ngModel)]="newTask.title" type="text" placeholder="Title"/><br/>
+<select [(ngModel)]="newTask.priority_level" type="text">
+    <option value="" disabled selected hidden>Priority Level</option>
+    <option value="Low">Low</option>
+    <option value="Medium">Medium </option>
+    <option value="High">High </option>
+    <option value="Critical">Critical </option>
+</select>
+<br/>
+<input  [(ngModel)]="newTask.description" type="text" placeholder="Description"/>
+<br/>
+<select  [(ngModel)]="newTask.category" type="text" >
+    <option value="" disabled selected hidden>Category</option>
+    <option value="Exercise">Exercise</option>
+    <option value="Leisure">Leisure </option>
+    <option value="Cardio">Cardio </option>
+    <option value="Rest">Rest </option>
+</select>
+<br/>
+<select  [(ngModel)]="newTask.progress_level" type="text" placeholder="Progress Level">
+    <option value="" disabled selected hidden>Progress Level</option>
+    <option value="Pending">Pending</option>
+    <option value="Started">Started </option>
+    <option value="Completed">Compelted </option>
+
+</select>
+<br/>
+<input  [(ngModel)]="newTask.task_date" type="date" placeholder="Date"/>

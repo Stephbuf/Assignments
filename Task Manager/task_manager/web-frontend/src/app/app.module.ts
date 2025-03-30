@@ -8,6 +8,8 @@ import { TaskComponent } from './components/task/task.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddTaskComponent } from './components/add-task/add-task.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     TaskComponent,
     TasksComponent,
-    NavbarComponent
+    NavbarComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

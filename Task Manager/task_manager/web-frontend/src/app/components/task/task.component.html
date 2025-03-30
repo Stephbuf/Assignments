@@ -1,11 +1,14 @@
 <div class="card">
-    <div class="card-header bg-success text-white">
+    <div class="card-header text-white" [ngClass]="{'bg-success':task.priority_level==='Low',
+                                                                 'bg-warning':task.priority_level==='Medium',
+                                                                 'bg-danger':task.priority_level==='High',
+                                                                 'bg-dark':task.priority_level==='Critical'}">
         <h4 class="card-title">{{task.title}}</h4>
     </div>
-    <div class="card-body bg-primary text-white">
+    <div class="card-body bg-info text-black">
         <p>{{task.description}}</p>
         <hr>
-        <h3>{{task.task_date |  date}}</h3>
+        <h3>{{task.task_date | date}}</h3>
         <hr>
         <h3>{{task.priority_level}}</h3>
         <hr>
