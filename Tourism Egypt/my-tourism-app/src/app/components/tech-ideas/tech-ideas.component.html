@@ -1,0 +1,75 @@
+<h2>Innovative Ideas</h2>
+
+<form [formGroup]="techIdeasForm" (ngSubmit)="onClick()">
+
+  <!-- Name -->
+  <div>
+    <label for="userName">Name</label>
+    <input type="text" id="userName" formControlName="name">
+    <span class="error" *ngIf="techIdeasForm.get('name')?.touched && techIdeasForm.get('name')?.errors?.['required']">
+      Please insert your name.
+    </span>
+    <span class="error" *ngIf="techIdeasForm.get('name')?.touched && techIdeasForm.get('name')?.errors?.['minlength']">
+      Your name should be more than 2 letters.
+    </span>
+    <span class="error" *ngIf="techIdeasForm.get('name')?.touched && techIdeasForm.get('name')?.errors?.['containsTourist']">
+      Name cannot contain the word tourist.
+    </span>
+  </div>
+
+  <br>
+
+  <!-- Email -->
+  <div>
+    <label for="userEmail">E-mail</label>
+    <input type="email" id="userEmail" formControlName="email">
+    <span class="error" *ngIf="techIdeasForm.get('email')?.touched && techIdeasForm.get('email')?.errors?.['required']">
+      Please insert your email.
+    </span>
+  </div>
+
+  <br>
+
+  <!-- Age -->
+  <div>
+    <label for="userAge">Age</label>
+    <input type="number" id="userAge" formControlName="age">
+  </div>
+
+  <br>
+
+  <!-- City -->
+  <div>
+    <label for="targetCity">Target City</label>
+    <select id="targetCity" formControlName="city">
+      <option value="">-- select --</option>
+      <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+    </select>
+    <span class="error" *ngIf="techIdeasForm.get('city')?.touched && techIdeasForm.get('city')?.errors?.['required']">
+      Please choose a city.
+    </span>
+  </div>
+
+  <br>
+
+  <!-- Brief -->
+  <div>
+    <label for="brief">Brief about your technical idea:</label>
+    <textarea rows="4" cols="50" id="brief" formControlName="brief"></textarea>
+    <span class="error" *ngIf="techIdeasForm.get('brief')?.touched && techIdeasForm.get('brief')?.errors?.['required']">
+      Please insert a brief about your project.
+    </span>
+    <span class="error" *ngIf="techIdeasForm.get('brief')?.touched && techIdeasForm.get('brief')?.errors?.['minlength']">
+      Your brief should be more than 99 characters.
+    </span>
+    <span class="error" *ngIf="techIdeasForm.get('brief')?.touched && techIdeasForm.get('brief')?.errors?.['containsNothing']">
+      Your project description cannot contain the word "nothing."
+    </span>
+  </div>
+
+  <br>
+
+  <!-- Submit Button -->
+  <button type="submit" [disabled]="techIdeasForm.invalid">Submit</button>
+
+</form>

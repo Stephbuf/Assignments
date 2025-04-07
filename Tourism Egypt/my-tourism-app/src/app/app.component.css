@@ -1,0 +1,30 @@
+nav {
+    color: white;
+    background-color: cornflowerblue;
+    position: fixed;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    top: 0%;
+    left: 0%;
+    text-align: center;
+
+}
+
+a {
+    padding: 20px;
+    display: inline;
+}
+
+footer { 
+    color: white;
+    background-color: cornflowerblue;
+    position: fixed;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    bottom: 0%;
+    left: 0%;
+    text-align: center;
+    opacity: 0.2;
+}

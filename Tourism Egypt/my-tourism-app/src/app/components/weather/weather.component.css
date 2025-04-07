@@ -1,0 +1,13 @@
+.styleCities {
+    text-decoration: none;
+    border: 1px solid red;
+    background: white;
+    color: black;
+    padding: 10px;
+    font-style: italic;
+
+}
+
+.styleCities a:hover {
+    background-color: red;
+}
