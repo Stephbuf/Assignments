@@ -18,7 +18,8 @@ import { NgModule } from "@angular/core";
     WeatherComponent,
     WeatherDetailsComponent,
     ImportantTextDirective,
-    TechIdeaComponent
+    TechIdeaComponent,
+    AppModule
   ],
   imports: [
     BrowserModule,        

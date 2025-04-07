@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { GetcitiesService } from '../../services/getcities.service';
 import { cityinfo } from './cities-info';
+import { NgClass, NgFor } from '@angular/common'; // ✅ Import both
 
 @Component({
   selector: 'app-cities',
-  imports: [],
+  standalone: true,
+  imports: [NgClass, NgFor], // ✅ Add both here
   templateUrl: './cities.component.html',
-  styleUrl: './cities.component.css'
+  styleUrls: ['./cities.component.css'] // ✅ fixed property name
 })
 export class CitiesComponent implements OnInit {
   cities: cityinfo[] = [];
@@ -15,8 +17,8 @@ export class CitiesComponent implements OnInit {
   constructor(private _citiesService: GetcitiesService) {}
 
   ngOnInit() {
-    this.cities=this._citiesService.returnCities();
-    this.color=this.colorit();
+    this.cities = this._citiesService.returnCities();
+    this.color = this.colorit();
   }
 
   colorit() {
@@ -28,4 +30,3 @@ export class CitiesComponent implements OnInit {
     return true;
   }
 }
-

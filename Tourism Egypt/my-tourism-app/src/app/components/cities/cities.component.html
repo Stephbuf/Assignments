@@ -1,5 +1,7 @@
 <div *ngFor="let city of cities">
-    <h2 [ngClass]="{'bg-success':color===true,'bg-dark':color===false}"> {{ city.name }} </h2>
-    <p> {{ city.attractionSites}} </p>
-
-</div>
+    <h3 [ngClass]="{ 'bg-success': color === true, 'bg-dark': color === false }">
+      {{ city.name }}
+    </h3>
+    <p>{{ city.attractionSites }}</p>
+  </div>
+  

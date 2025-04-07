@@ -1,10 +1,13 @@
+
 import { Component, OnInit } from '@angular/core';
 import { CityWeather } from '../cities/cities-info-data';
 import { GetweatherService } from '../../services/getweather.service';
+import { RouterModule } from '@angular/router';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-weather',
-  imports: [],
+  imports: [NgFor, RouterModule],
   templateUrl: './weather.component.html',
   styleUrl: './weather.component.css'
 })

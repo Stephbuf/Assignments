@@ -1,10 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AbstractControl,
+  ValidationErrors,
+  ValidatorFn,
+  ReactiveFormsModule
+} from '@angular/forms';
 import { GetcitiesService } from '../../services/getcities.service';
+import { NgIf, NgFor } from '@angular/common'; // optional, for error displays or dropdowns
 
 @Component({
   selector: 'app-tech-ideas',
-  imports: [],
+  standalone: true, // ✅ required for standalone components
+  imports: [ReactiveFormsModule, NgIf, NgFor], // ✅ add required modules here
   templateUrl: './tech-ideas.component.html',
   styleUrls: ['./tech-ideas.component.css']
 })
@@ -29,21 +39,19 @@ export class TechIdeaComponent implements OnInit {
     });
   }
 
-  // Method moved inside the class
   onClick() {
-    console.log(this.techIdeasForm.controls['brief'].value); // Log brief value
-    this.techIdeasForm.reset(); // Clear the form
+    console.log(this.techIdeasForm.controls['brief'].value);
+    this.techIdeasForm.reset();
   }
 }
 
-// Custom validator for name (should not contain the word "tourist")
+// Custom validators
 export function cannotContainTourist(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     return control.value?.toLowerCase().includes('tourist') ? { containsTourist: true } : null;
   };
 }
 
-// Custom validator for brief (should not contain the word "nothing")
 export function cannotContainNothing(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     return control.value?.toLowerCase().includes('nothing') ? { containsNothing: true } : null;
