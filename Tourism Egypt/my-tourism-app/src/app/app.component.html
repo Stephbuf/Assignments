@@ -1,10 +1,28 @@
 <!-- Navigation Tabs -->
-<nav class="tabs">
-  <a routerLink="/home" routerLinkActive="active-tab">Home</a>
-  <a routerLink="/cities" routerLinkActive="active-tab">Cities</a>
-  <a routerLink="/weather" routerLinkActive="active-tab">Weather</a>
-  <a routerLink="/tech-ideas" routerLinkActive="active-tab">Tech Ideas</a>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" routerLink="/home">My Tourism App</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" routerLink="/home" routerLinkActive="active-tab">Home</a>
+        <a class="nav-link" routerLink="/cities" routerLinkActive="active-tab">Cities</a>
+        <a class="nav-link" routerLink="/weather" routerLinkActive="active-tab">Weather</a>
+        <a class="nav-link" routerLink="/tech-ideas" routerLinkActive="active-tab">Tech Ideas</a>
+      </div>
+    
+    </div>
+  </div>
 </nav>
+
 
 <!-- Routed Content Appears Here -->
 <div class="tab-content">

@@ -1,9 +1,13 @@
-<div>
-    <ul>
-      <li *ngFor="let weather of weatherData" class="removebullet">
-        <a class="styleCities" [routerLink]="['/weather', weather.name, weather.springN, weather.springM, weather.summerN, weather.summerM, weather.winterN, weather.winterM, weather.autumnN, weather.autumnM, weather.visitFrom, weather.visitTo]">
-           {{weather.name}} </a>
-      </li>
-    </ul>
-  </div>
-  
+
+<div class="table-container">
+  <table>
+    <tr *ngFor="let weather of weatherData">
+      <td>
+        <a class="styleCities"
+           [routerLink]="['/weather', weather.name, weather.springN, weather.springM, weather.summerN, weather.summerM, weather.winterN, weather.winterM, weather.autumnN, weather.autumnM, weather.visitFrom, weather.visitTo]">
+          {{ weather.name }}
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>

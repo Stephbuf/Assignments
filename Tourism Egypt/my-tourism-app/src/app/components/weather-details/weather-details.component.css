@@ -1,0 +1,19 @@
+.center-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;     /* vertical center */
+    align-items: center;         /* horizontal center */
+    min-height: 50vh;           /* full screen height */
+    text-align: center;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: auto;
+  }
+  
+  td, th {
+    padding: 10px 10px;
+    text-align: center;
+  }
+  

@@ -1,7 +1,33 @@
 div {
     font-size: 20px;
+    padding-left: 500px;
+    padding-right: 500px;
 }
 
 .aim {
     font-weight: bold;
 }
+
+.home-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* vertical center */
+    align-items: center;      /* horizontal center */
+    min-height: 70vh;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  img {
+    margin-top: 1.5rem;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .aim {
+    font-weight: bold;
+    margin: 1rem 0 0.5rem;
+ 
+  }
+
+ 

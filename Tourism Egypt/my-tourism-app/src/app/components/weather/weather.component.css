@@ -1,13 +1,32 @@
-.styleCities {
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh; /* or 100vh if you want full screen */
+  }
+  
+  table {
+    border-collapse: collapse;
+  }
+  
+  td {
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  a.styleCities {
     text-decoration: none;
-    border: 1px solid red;
-    background: white;
-    color: black;
-    padding: 10px;
-    font-style: italic;
-
-}
-
-.styleCities a:hover {
-    background-color: red;
-}
+    font-weight: bold;
+    color: #333;
+    transition: 0.3s ease;
+    font-size: 20px !important; /* ✅ Force override */
+  }
+  
+  
+  a.styleCities:hover {
+    color: white;
+    background-color: cornflowerblue;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  

@@ -1,11 +1,12 @@
+<div class="form-center-wrapper">
 <h2>Innovative Ideas</h2>
 
 <form [formGroup]="techIdeasForm" (ngSubmit)="onClick()">
 
   <!-- Name -->
   <div>
-    <label for="userName">Name</label>
-    <input type="text" id="userName" formControlName="name">
+    <label for="userName">Name:</label><br>
+    <input type="text" id="userName" formControlName="name" placeholder="Enter your name" style="text-align: center;">
     <span class="error" *ngIf="techIdeasForm.get('name')?.touched && techIdeasForm.get('name')?.errors?.['required']">
       Please insert your name.
     </span>
@@ -21,8 +22,8 @@
 
   <!-- Email -->
   <div>
-    <label for="userEmail">E-mail</label>
-    <input type="email" id="userEmail" formControlName="email">
+    <label for="userEmail">E-mail:</label> <br>
+    <input type="email" id="userEmail" formControlName="email" placeholder="Enter your email" style="text-align: center;">
     <span class="error" *ngIf="techIdeasForm.get('email')?.touched && techIdeasForm.get('email')?.errors?.['required']">
       Please insert your email.
     </span>
@@ -32,16 +33,16 @@
 
   <!-- Age -->
   <div>
-    <label for="userAge">Age</label>
-    <input type="number" id="userAge" formControlName="age">
+    <label for="userAge">Age:</label><br>
+    <input type="number" id="userAge" formControlName="age" placeholder="Enter your age" style="text-align: center;">
   </div>
 
   <br>
 
   <!-- City -->
   <div>
-    <label for="targetCity">Target City</label>
-    <select id="targetCity" formControlName="city">
+    <label for="targetCity">Target City:</label><br>
+    <select id="targetCity" formControlName="city" style="text-align: center;">
       <option value="">-- select --</option>
       <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
     </select>
@@ -54,8 +55,8 @@
 
   <!-- Brief -->
   <div>
-    <label for="brief">Brief about your technical idea:</label>
-    <textarea rows="4" cols="50" id="brief" formControlName="brief"></textarea>
+    <label for="brief">Brief about your technical idea:</label> <br>
+    <textarea rows="4" cols="50" id="brief" formControlName="brief" placeholder="Enter brief here" style="text-align: center;"></textarea>
     <span class="error" *ngIf="techIdeasForm.get('brief')?.touched && techIdeasForm.get('brief')?.errors?.['required']">
       Please insert a brief about your project.
     </span>

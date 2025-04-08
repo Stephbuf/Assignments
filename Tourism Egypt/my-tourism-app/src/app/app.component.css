@@ -1,16 +1,21 @@
-nav {
-    color: white;
+#navbarNavAltMarkup {
     background-color: cornflowerblue;
     position: fixed;
     width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    top: 0%;
-    left: 0%;
+    padding: 10px 0;
+    top: 0;
+    left: 0;
     text-align: center;
-
-}
-
+    z-index: 1000; /* Keeps navbar above other elements */
+  }
+  
+  #navbarNavAltMarkup .nav-link {
+    color: white !important;
+    font-size: 16px !important; /* ✅ Adjust as needed */
+    margin: 0 15px;
+    text-decoration: none;
+  }
+  
 a {
     padding: 20px;
     display: inline;
@@ -28,3 +33,4 @@ footer {
     text-align: center;
     opacity: 0.2;
 }
+

@@ -1,7 +1,8 @@
-<div *ngFor="let city of cities">
+<div class="cities-wrapper">
+  <div *ngFor="let city of cities" class="city-card">
     <h3 [ngClass]="{ 'bg-success': color === true, 'bg-dark': color === false }">
       {{ city.name }}
     </h3>
     <p>{{ city.attractionSites }}</p>
   </div>
-  
+</div>
