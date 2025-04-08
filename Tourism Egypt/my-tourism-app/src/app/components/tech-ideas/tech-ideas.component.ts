@@ -13,8 +13,8 @@ import { NgIf, NgFor } from '@angular/common'; // optional, for error displays o
 
 @Component({
   selector: 'app-tech-ideas',
-  standalone: true, // ✅ required for standalone components
-  imports: [ReactiveFormsModule, NgIf, NgFor], // ✅ add required modules here
+  standalone: true, 
+  imports: [ReactiveFormsModule, NgIf, NgFor],
   templateUrl: './tech-ideas.component.html',
   styleUrls: ['./tech-ideas.component.css']
 })
