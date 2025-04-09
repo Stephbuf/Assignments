@@ -6,8 +6,8 @@
   .form-center-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* vertical center */
-    align-items: center;      /* horizontal center */
+    justify-content: center;  
+    align-items: center;      
     min-height: 80vh;
     text-align: center;
   }

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 50vh; /* or 100vh if you want full screen */
+    min-height: 50vh; 
   }
   
   table {
@@ -25,7 +25,7 @@
   
   a.styleCities:hover {
     color: white;
-    background-color: cornflowerblue;
+    background-color: rgba(243, 139, 139, 0.795);
     padding: 5px 10px;
     border-radius: 5px;
   }

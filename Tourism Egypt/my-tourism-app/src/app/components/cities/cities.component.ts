@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { GetcitiesService } from '../../services/getcities.service';
 import { cityinfo } from './cities-info';
-import { NgClass, NgFor } from '@angular/common'; // ✅ Import both
-
+import { NgClass, NgFor } from '@angular/common'; 
 @Component({
   selector: 'app-cities',
   standalone: true,
-  imports: [NgClass, NgFor], // ✅ Add both here
+  imports: [NgClass, NgFor], 
   templateUrl: './cities.component.html',
-  styleUrls: ['./cities.component.css'] // ✅ fixed property name
+  styleUrls: ['./cities.component.css']
 })
 export class CitiesComponent implements OnInit {
   cities: cityinfo[] = [];

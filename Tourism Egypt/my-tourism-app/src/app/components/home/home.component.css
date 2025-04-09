@@ -11,8 +11,8 @@ div {
 .home-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* vertical center */
-    align-items: center;      /* horizontal center */
+    justify-content: center;  
+    align-items: center;     
     min-height: 70vh;
     padding: 20px;
     text-align: center;
@@ -20,8 +20,9 @@ div {
   
   img {
     margin-top: 1.5rem;
-    max-width: 100%;
-    height: auto;
+    max-width: 35%;
+    height: 50%;
+    border-radius: 25px;
   }
   
   .aim {
@@ -30,4 +31,4 @@ div {
  
   }
 
- 
+  

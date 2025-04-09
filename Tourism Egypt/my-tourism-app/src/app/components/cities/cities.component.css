@@ -9,7 +9,7 @@
   }
   
   .city-card {
-    width: 320px; /* ✅ Makes all entries visually aligned */
+    width: 320px;
     margin-bottom: 30px;
   }
   
@@ -27,4 +27,3 @@
     font-size: 20px;
     margin: 0;
   }
-  
