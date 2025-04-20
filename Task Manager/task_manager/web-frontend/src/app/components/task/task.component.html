@@ -1,20 +1,47 @@
 <div class="card">
-    <div class="card-header text-white" [ngClass]="{'bg-success':task.priority_level==='Low',
-                                                                 'bg-warning':task.priority_level==='Medium',
-                                                                 'bg-danger':task.priority_level==='High',
-                                                                 'bg-dark':task.priority_level==='Critical'}">
-        <h4 class="card-title">{{task.title}}</h4>
+    <div
+      class="card-header text-white"
+      [ngClass]="{
+        'bg-success': task.priority_level === 'Low',
+        'bg-warning': task.priority_level === 'Medium',
+        'bg-danger': task.priority_level === 'High',
+        'bg-dark': task.priority_level === 'Critical'
+      }"
+    >
+      <h2 class="card-title">{{ task.title }}</h2>
     </div>
-    <div class="card-body bg-info text-black">
-        <p>{{task.description}}</p>
-        <hr>
-        <h3>{{task.task_date | date}}</h3>
-        <hr>
-        <h3>{{task.priority_level}}</h3>
-        <hr>
-        <h3>{{task.category}}</h3>
-        <hr>
-        <h2>{{task.progress_level}}</h2>
-        <hr>
+  
+    <div class="card-body text-black">
+      <h4>{{ task.description }}</h4>
+      <hr />
+      <h5>{{ task.task_date | date }}</h5>
+      <hr />
+      <h5>{{ task.priority_level }}</h5>
+      <hr />
+      <h5>{{ task.category }}</h5>
+      <hr />
+      <h5>{{ task.progress_level }}</h5>
+      <hr />
+  
+      <!--  Delete Button -->
+      
+     <!--<a [routerLink]="['/task', task.id]" class="btn btn-primary">Delete</a> --> 
+      <button (click)="onDelete()" class="btn delete-btn">
+        <div id="app-cover">
+          <input type="checkbox" id="checkbox" />
+          <div id="bin-icon">
+            <div id="lid"></div>
+            <div id="box">
+              <div id="box-inner">
+                <div id="bin-lines"></div>
+              </div>
+            </div>
+          </div>
+          <div id="layer"></div>
+        </div>
+      </button>
+      
+
     </div>
-</div>
+  </div>
+  

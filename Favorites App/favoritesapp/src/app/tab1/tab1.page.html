@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <!-- Date -->
+  <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime
+        id="datetime"
+        presentation="date"
+        [value]="currentDateTime"
+        [formatOptions]="{
+          date: {
+            weekday: 'short',
+            month: 'long',
+            day: '2-digit',
+          },
+        }"
+      ></ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <br>
+
+  <div class="imessage">
+    <p class="from-me">Welcome!</p>
+  </div>
+
+  <div class="imessage">
+    <p class="from-them">Organize your personal world of stories and sounds — all in one place!</p>
+  </div>
+
+  <div class="imessage">
+    <p class="from-me">Keep track of the books you're reading, build your dream reading list, and save your all-time favorite songs.</p>
+  </div>
+
+  <div class="imessage">
+    <p class="from-them"> Whether you're diving into a new novel or jamming to your latest playlist, this app helps you stay inspired and in tune with what you love most.</p>
+  </div>
+
+
+</ion-content>
+  
+

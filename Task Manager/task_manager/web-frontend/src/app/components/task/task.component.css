@@ -1,4 +1,209 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+@import 'https://use.fontawesome.com/releases/v5.14.0/css/all.css';
+   
+
 .card {
-    width: 50%;
-    margin: auto;
+    width: 60%;
+    margin: 2rem auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+ 
+  .card .container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .card .item {
+    background: rgb(224, 210, 229);
+    box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: auto repeat(4, auto);
+    grid-template-rows: max-content;
+    justify-content: space-between;
+    padding: 15px;
+    width: 100%;
+    max-width: 600px;
+    min-height: 250px;
+  }
+  
+  .card .item > i:first-child {
+    grid-column: span 2;
+    font-size: 3em;
+    padding-top: 10px;
+  }
+  
+  .card .item > p {
+    grid-column: span 2;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: end;
+    margin-top: 2px;
+  }
+  
+  .card .fa-ellipsis-v {
+    font-size: 2em;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .card .progress,
+  .card .category {
+    grid-column: span 5;
+    padding: 10px;
+    background: inherit;
+  }
+  
+  .card .progress > p,
+  .card .category > p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95em;
+  }
+  
+  .card p > span {
+    font-size: 0.85em;
+    color: rgba(99, 99, 99, 0.8);
+  }
+  
+  .value {
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    appearance: none;
+  }
+  
+  .value::-webkit-progress-bar {
+    background-color: rgba(99, 99, 99, 0.3);
+    border-radius: 10px;
+  }
+  
+  .value::-webkit-progress-value {
+    background-color: #6a1b9a;
+    border-radius: 10px;
+  }
+  
+  @import 'https://fonts.googleapis.com/css?family=Raleway';
+@import 'https://use.fontawesome.com/releases/v5.14.0/css/all.css';
+
+/* 🔹 Base .btn styling (no background, for positioning only) */
+.btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
+
+#app-cover {
+  position: relative;
+    width: 40px;
+    height: 10px;
+
+}
+
+
+#bin-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 42px;
+  height: 58px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+#lid {
+  position: relative;
+  width: 50px;
+  height: 4px;
+  left: -4px;
+  border-radius: 4px;
+  background-color: #f44336;
+  transition: 0.2s ease background-color;
+}
+
+#lid:before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: 0;
+  left: 0;
+  width: 10px;
+  height: 6px;
+  margin: 0 auto;
+  border-radius: 10px 10px 0 0;
+  background-color: #f44336;
+  transition: 0.2s ease background-color;
+}
+
+#app-cover {
+    transform: scale(0.5);
+}
+#box {
+  position: relative;
+  height: 52px;
+  margin-top: 2px;
+  border-radius: 0 0 8px 8px;
+  background-color: #f44336;
+  transition: 0.2s ease background-color;
+}
+
+#box-inner {
+  position: relative;
+  top: 4px;
+  width: 34px;
+  height: 44px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 0 0 5px 5px;
+  transition: 0.2s ease background-color;
+}
+
+#bin-lines {
+  position: relative;
+  top: 7px;
+  margin: 0 auto;
+  width: 3px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #f44336;
+  transition: 0.2s ease background-color;
+}
+
+#bin-lines:before,
+#bin-lines:after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #f44336;
+  transition: 0.2s ease background-color;
+}
+
+#bin-lines:before {
+  left: -10px;
+}
+
+#bin-lines:after {
+  left: 10px;
+}
+
+#layer {
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  width: 0;
+  height: 0;
+  background-color: #03a9f4;
+  border-radius: 50%;
+  transition: 0.25s ease all;
+  z-index: 1;
+}
+

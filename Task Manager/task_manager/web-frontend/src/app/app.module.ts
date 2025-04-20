@@ -17,14 +17,15 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     TaskComponent,
     TasksComponent,
-    NavbarComponent,
-    AddTaskComponent
+    NavbarComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AddTaskComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

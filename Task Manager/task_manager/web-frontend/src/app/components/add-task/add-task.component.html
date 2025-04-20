@@ -1,30 +1,78 @@
+<div [ngStyle]="{
+    'background-image': 'url(https://images.unsplash.com/photo-1678846851807-3fab5c774d14?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
+    'background-size': 'cover',
+    'background-position': 'center',
+    'background-repeat': 'no-repeat',
+    'height': '92.5vh',
+  
+    'padding': '40px',
+    'display': 'flex',
+    'align-items': 'flex-start',
+    'justify-content': 'flex-start'
+  }">
+  <form method="get" action="javascript: void(0);" id="login-form" class="login-form" autocomplete="off" role="main"
+  style="background-color: rgba(255, 255, 255, 0.9); text-align: center; padding: 30px; border-radius: 15px; width: 400px;">
+    <h1 class="a11y-hidden">Add Task</h1>
+    <br />
 
-<button (click)="addTask()">Add Task</button><br/>
-<input [(ngModel)]="newTask.title" type="text" placeholder="Title"/><br/>
-<select [(ngModel)]="newTask.priority_level" type="text">
-    <option value="" disabled selected hidden>Priority Level</option>
-    <option value="Low">Low</option>
-    <option value="Medium">Medium </option>
-    <option value="High">High </option>
-    <option value="Critical">Critical </option>
-</select>
-<br/>
-<input  [(ngModel)]="newTask.description" type="text" placeholder="Description"/>
-<br/>
-<select  [(ngModel)]="newTask.category" type="text" >
-    <option value="" disabled selected hidden>Category</option>
-    <option value="Exercise">Exercise</option>
-    <option value="Leisure">Leisure </option>
-    <option value="Cardio">Cardio </option>
-    <option value="Rest">Rest </option>
-</select>
-<br/>
-<select  [(ngModel)]="newTask.progress_level" type="text" placeholder="Progress Level">
-    <option value="" disabled selected hidden>Progress Level</option>
-    <option value="Pending">Pending</option>
-    <option value="Started">Started </option>
-    <option value="Completed">Compelted </option>
+    <div class="form-group">
+      <form class="form" [formGroup]="addTaskForm" (ngSubmit)="onClick()">
+        <input formControlName="title" type="text" placeholder="Title" /><br />
+        <span class="error" *ngIf="addTaskForm.get('title')?.touched && addTaskForm.get('title')?.errors?.['required']">
+          Must add a title!
+        </span><br />
 
-</select>
-<br/>
-<input  [(ngModel)]="newTask.task_date" type="date" placeholder="Date"/>
+        <select formControlName="priority_level">
+          <option value="" disabled selected hidden>Priority Level</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+          <option value="Critical">Critical</option>
+        </select><br />
+        <span class="error"
+          *ngIf="addTaskForm.get('priority_level')?.touched && addTaskForm.get('priority_level')?.errors?.['required']">
+          Must select a priority level!
+        </span><br />
+
+        <input formControlName="description" type="text" placeholder="Description" /><br />
+        <span class="error"
+          *ngIf="addTaskForm.get('description')?.touched && addTaskForm.get('description')?.errors?.['required']">
+          Must add a description!
+        </span><br />
+
+        <select formControlName="category">
+          <option value="" disabled selected hidden>Category</option>
+          <option value="Exercise">Exercise</option>
+          <option value="Leisure">Leisure</option>
+          <option value="Cardio">Cardio</option>
+          <option value="Rest">Rest</option>
+        </select><br />
+        <span class="error"
+          *ngIf="addTaskForm.get('category')?.touched && addTaskForm.get('category')?.errors?.['required']">
+          Must select a category!
+        </span><br />
+
+        <select formControlName="progress_level">
+          <option value="" disabled selected hidden>Progress Level</option>
+          <option value="Pending">Pending</option>
+          <option value="Started">Started</option>
+          <option value="Completed">Completed</option>
+        </select><br />
+        <span class="error"
+          *ngIf="addTaskForm.get('progress_level')?.touched && addTaskForm.get('progress_level')?.errors?.['required']">
+          Must select a progress level!
+        </span><br />
+
+        <input formControlName="task_date" type="date" /><br />
+        <span class="error"
+          *ngIf="addTaskForm.get('task_date')?.touched && addTaskForm.get('task_date')?.errors?.['required']">
+          Must pick a date!
+        </span><br />
+
+        <div style="text-align: center;">
+          <button type="submit" [disabled]="addTaskForm.invalid" class="submit">Add Task</button>
+        </div>
+      </form>
+    </div>
+  </form>
+</div>

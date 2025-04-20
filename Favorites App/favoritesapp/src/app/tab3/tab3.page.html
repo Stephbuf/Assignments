@@ -1,0 +1,97 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Favorite Songs 🎵
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
+    <!-- Casting $event to $any is a temporary fix for this bug https://github.com/ionic-team/ionic-framework/issues/24245 -->
+    <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
+
+      <!-- Shaboozey -->
+      <ion-item>
+        <ion-label>
+          <a href="https://www.youtube.com/watch?v=t7bQwwqW-Hc" target="_blank" rel="noopener noreferrer"
+            style="text-decoration: none; color: inherit;">
+            Shaboozey - A Bar Song
+          </a>
+        </ion-label>
+        <ion-reorder slot="end">
+          <ion-icon name="musical-note-outline"></ion-icon>
+        </ion-reorder>
+      </ion-item>
+
+      <!-- Jordan Davis -->
+      <ion-item>
+        <ion-label>
+          <a href="https://www.youtube.com/watch?v=iV6neD4KNhI" target="_blank" rel="noopener noreferrer"
+            style="text-decoration: none; color: inherit;">
+            Jordan Davis - Bar None
+          </a>
+        </ion-label>
+        <ion-reorder slot="end">
+          <ion-icon name="musical-note-outline"></ion-icon>
+        </ion-reorder>
+      </ion-item>
+
+      <!-- Tiesto -->
+      <ion-item>
+        <ion-label>
+          <a href="https://www.youtube.com/watch?v=3eApJGC02dA" target="_blank" rel="noopener noreferrer"
+            style="text-decoration: none; color: inherit;">
+            Tiesto - Wasted
+          </a>
+        </ion-label>
+        <ion-reorder slot="end">
+          <ion-icon name="musical-note-outline"></ion-icon>
+        </ion-reorder>
+      </ion-item>
+
+      <!-- One Republic -->
+      <ion-item>
+        <ion-label>
+          <a href="https://www.youtube.com/watch?v=TKkcsmvYTw4" target="_blank" rel="noopener noreferrer"
+            style="text-decoration: none; color: inherit;">
+            OneRepublic - Run
+          </a>
+        </ion-label>
+        <ion-reorder slot="end">
+          <ion-icon name="musical-note-outline"></ion-icon>
+        </ion-reorder>
+      </ion-item>
+
+      <!-- Little Big Town -->
+      <ion-item>
+        <ion-label>
+          <a href="https://www.youtube.com/watch?v=FDF0Y9KOloY" target="_blank" rel="noopener noreferrer"
+            style="text-decoration: none; color: inherit;">
+            Little Big Town - Wine, Beer, Whiskey
+          </a>
+        </ion-label>
+        <ion-reorder slot="end">
+          <ion-icon name="musical-note-outline"></ion-icon>
+        </ion-reorder>
+      </ion-item>
+
+    </ion-reorder-group>
+  </ion-list>
+<br>
+<!-- <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br> -->
+<br>
+  <!-- Music Photo -->
+  <div style="text-align: center; margin-top: 2rem;">
+    <img src="assets/photos/music.jpg" alt="MusicPhoto" style="max-width: 100%; height: auto; opacity: .9;" />
+  </div>
+
+</ion-content>

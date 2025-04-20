@@ -1,0 +1,116 @@
+.error {
+  color: #d8000c;
+  background-color: #ffd2d2;
+  font-style: italic;
+  text-align: center !important;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-top: 4px;
+}
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+
+.add-task-background {
+  background-image: url(https://images.unsplash.com/photo-1678846851807-3fab5c774d14?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  /* ✅ Ensures full page background */
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 40px;
+}
+
+body {
+  background-color: #FFC6D4;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff0f5;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 450px;
+  margin: 40px auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin: 15px 0 0 350px;
+}
+
+.photo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.task-image {
+  width: 100%;
+  max-width: 50x;
+  border-radius: 15px;
+
+}
+
+.page {
+  width: 100%;
+  background: white;
+  border: 2px solid #F1A3B6;
+  border-radius: 15px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.header {
+  font-size: 24px;
+  color: #F1A3B6;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form input,
+.form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  text-align: center;
+}
+
+.submit {
+  font-family: Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  background-color: white;
+  color: #F1A3B6;
+  font-size: 18px;
+  margin: 20px 0 10px 0;
+  padding: 10px;
+  width: 130px;
+  border: 2px solid #F1A3B6;
+  border-radius: 25px;
+  transition: all 0.4s;
+}
+
+.submit:hover {
+  background-color: #df1b948e;
+  border-color: #df1b948e;
+  color: white;
+  font-weight: bold;
+}

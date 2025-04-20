@@ -1,3 +1,6 @@
-<div *ngFor="let task_item of tasks">
-<app-task [task]="task_item"></app-task>
+
+ <div *ngFor="let task_item of tasks">
+    <app-task [task]="task_item" (deleteTask)="deleteTask($event)"></app-task>
+    
 </div>
+
