@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class Tab2Page {
-
+  selectedSegment: string = 'comedy'; // default view
   constructor() {}
 
 }

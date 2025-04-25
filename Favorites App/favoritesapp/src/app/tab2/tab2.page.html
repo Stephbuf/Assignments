@@ -1,69 +1,92 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-     Reading List 📖
+    <ion-title style="text-align: center;">
+      Reading List 📖
     </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="selectedSegment" value="comedy">
+      <ion-segment-button value="comedy">
+        <ion-label>Comedic Romance</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="thriller">
+        <ion-label>Thriller</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
-  <!--The Cheat Sheet -->
-  <ion-card>
-    <a href="https://www.goodreads.com/book/show/58100280-the-cheat-sheet" target="_blank" rel="noopener noreferrer">
-      <img alt="cheatsheet"
-        src="https://books.google.ca/books/publisher/content?id=vYVmEAAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U2YU1AfS0VlD-HHHzCvUOo1FNGCCA&w=1280" />
-    </a>
-    <ion-card-header>
-      <ion-card-title>The Cheat Sheet</ion-card-title>
-      <ion-card-subtitle> By Sarah Adams</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      The Cheat Sheet is a feel-good rom-com about Bree Camden, who’s secretly in love with her best friend, NFL star
-      Nathan Donelson. When a public slip-up leads to a fake relationship, their pretend romance starts to feel all too
-      real. Filled with witty banter and swoony moments, it’s a charming story of friendship, love, and taking a chance.
-    </ion-card-content>
-  </ion-card>
+  <!-- Comedy Romance Section -->
+  <ng-container *ngIf="selectedSegment === 'comedy'">
+    <ion-list>
+      <ion-item-group>
+     
+        <!-- The Cheat Sheet -->
+        <ion-card>
+          <a href="https://www.goodreads.com/book/show/58100280-the-cheat-sheet" target="_blank" rel="noopener noreferrer">
+            <img alt="cheatsheet"
+              src="https://books.google.ca/books/publisher/content?id=vYVmEAAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U2YU1AfS0VlD-HHHzCvUOo1FNGCCA&w=1280" />
+          </a>
+          <ion-card-header>
+            <ion-card-title>The Cheat Sheet</ion-card-title>
+            <ion-card-subtitle>By Sarah Adams</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            The Cheat Sheet is a feel-good rom-com about Bree Camden, who’s secretly in love with her best friend, NFL star
+            Nathan Donelson. When a public slip-up leads to a fake relationship, their pretend romance starts to feel all too
+            real. Filled with witty banter and swoony moments, it’s a charming story of friendship, love, and taking a chance.
+          </ion-card-content>
+        </ion-card>
 
-  <!-- The Wife Upstairs -->
-  <ion-card>
-    <a href="https://www.goodreads.com/book/show/52636419-the-wife-upstairs?from_search=true&from_srp=true&qid=E64Vg3u411&rank=2"
-      target="_blank" rel="noopener noreferrer">
-      <img alt="wifeupstairs" src="https://m.media-amazon.com/images/I/81d4dC8QTXL._UF894,1000_QL80_.jpg" />
-    </a>
-    <ion-card-header>
-      <ion-card-title>The Wife Upstairs</ion-card-title>
-      <ion-card-subtitle>By Freida McFadden</ion-card-subtitle>
-    </ion-card-header>
+        <!-- PS I Hate You -->
+        <ion-card>
+          <a href="https://www.goodreads.com/book/show/209455843-ps?ref=nav_sb_ss_1_14" target="_blank" rel="noopener noreferrer">
+            <img alt="psihateyou"
+              src="https://books.google.ca/books/publisher/content?id=C_f4EAAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U1dV8zgiGERb0nTXDc4pBcv9DbQpw&w=1280" />
+          </a>
+          <ion-card-header>
+            <ion-card-title>PS. I Hate You</ion-card-title>
+            <ion-card-subtitle>By Lauren Connolly</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            When Maddie sets out to fulfill her late brother’s final wish—scattering his ashes across eight destinations—she’s
+            shocked to learn her travel partner is Dominic, the ex who broke her heart. As they journey through grief and
+            globe-trot across emotional and physical miles, old feelings resurface. Packed with tension, heartache, and second
+            chances, PS. I Hate You is a touching story of love, loss, and healing.
+          </ion-card-content>
+        </ion-card>
+      </ion-item-group>
+    </ion-list>
+  </ng-container>
 
-    <ion-card-content>
-      In this twisted psychological thriller, newlywed Victoria should be living a perfect life—married to a rich,
-      charming man with a beautiful home. But something isn’t right. The door to the attic is always locked, and her
-      husband avoids questions about his first wife, who mysteriously vanished. As Victoria uncovers disturbing secrets,
-      she realizes the truth might be more horrifying than she imagined. The Wife Upstairs is a chilling, fast-paced
-      story full of suspense, secrets, and jaw-dropping twists.
-    </ion-card-content>
-  </ion-card>
-
-  <!-- PS I Hate you -->
-  <ion-card>
-    <a href="https://www.goodreads.com/book/show/209455843-ps?ref=nav_sb_ss_1_14" target="_blank"
-      rel="noopener noreferrer">
-      <img alt="psihateyou"
-        src="https://books.google.ca/books/publisher/content?id=C_f4EAAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U1dV8zgiGERb0nTXDc4pBcv9DbQpw&w=1280" />
-    </a>
-    <ion-card-header>
-      <ion-card-title>PS. I hate You </ion-card-title>
-      <ion-card-subtitle>By Lauren Connolly</ion-card-subtitle>
-    </ion-card-header>
-
-    <ion-card-content>
-      When Maddie sets out to fulfill her late brother’s final wish—scattering his ashes across eight destinations—she’s
-      shocked to learn her travel partner is Dominic, the ex who broke her heart. As they journey through grief and
-      globe-trot across emotional and physical miles, old feelings resurface. Packed with tension, heartache, and second
-      chances, P.S. I Hate You is a touching story of love, loss, and healing.
-    </ion-card-content>
-  </ion-card>
-
+  <!-- Thriller Section -->
+  <ng-container *ngIf="selectedSegment === 'thriller'">
+    <ion-list>
+      <ion-item-group>
+    
+        <!-- The Wife Upstairs -->
+        <ion-card>
+          <a href="https://www.goodreads.com/book/show/52636419-the-wife-upstairs?from_search=true&from_srp=true&qid=E64Vg3u411&rank=2"
+            target="_blank" rel="noopener noreferrer">
+            <img alt="wifeupstairs" src="https://m.media-amazon.com/images/I/81d4dC8QTXL._UF894,1000_QL80_.jpg" />
+          </a>
+          <ion-card-header>
+            <ion-card-title>The Wife Upstairs</ion-card-title>
+            <ion-card-subtitle>By Freida McFadden</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            In this twisted psychological thriller, newlywed Victoria should be living a perfect life—married to a rich,
+            charming man with a beautiful home. But something isn’t right. The door to the attic is always locked, and her
+            husband avoids questions about his first wife, who mysteriously vanished. As Victoria uncovers disturbing secrets,
+            she realizes the truth might be more horrifying than she imagined. The Wife Upstairs is a chilling, fast-paced
+            story full of suspense, secrets, and jaw-dropping twists.
+          </ion-card-content>
+        </ion-card>
+      </ion-item-group>
+    </ion-list>
+  </ng-container>
 
 </ion-content>
