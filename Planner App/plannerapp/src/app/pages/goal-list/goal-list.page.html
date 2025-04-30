@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Goals List</ion-title> <!-- Changed to match Goals -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Goals List -->
+  <ion-list>
+    <ion-card *ngFor="let goal of goals" class="text-black">
+      
+      <ion-item lines="none">
+        <ion-checkbox 
+          slot="start" 
+          color="success" 
+          [(ngModel)]="goal.completed" 
+          (ionChange)="onGoalCheckboxChange(goal)">
+        </ion-checkbox>
+        <ion-label>
+          <h1 class="card-title">{{ goal.title }}</h1>
+        </ion-label>
+      </ion-item>
+
+      <div class="card-body" [class.completed]="goal.completed" style="padding: 15px;">
+        <h4>{{ goal.description }}</h4>
+        <hr />
+        <h5>{{ goal.goal_date| date: 'yyyy-MM-dd' }}</h5>
+        <hr />
+        <h5>Prioriry Level: {{ goal.priority_level }}</h5>
+        <hr />
+        <h5>Progress Level: {{ goal.progress_level }}</h5>
+        <hr />
+      </div>
+
+      <!-- Edit and Delete buttons -->
+      <ion-grid style="padding-bottom: 10px;">
+        <ion-row class="ion-justify-content-around ion-align-items-center">
+          <ion-col size="auto">
+            <ion-button (click)="onEdit(goal)" color="success">Edit</ion-button>
+          </ion-col>
+          <ion-col size="auto">
+            <ion-button (click)="onDelete(goal.id)" color="danger">Delete</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card>
+  </ion-list>
+
+  <!-- Toast -->
+  <ion-toast
+    [isOpen]="showToast"
+    [message]="toastMessage"
+    [duration]="3000"
+    (didDismiss)="showToast = false">
+  </ion-toast>
+
+  <!-- Add Button (Floating Action Button) -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button [routerLink]="['/add-goals']"> <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  
+  </ion-fab> 
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

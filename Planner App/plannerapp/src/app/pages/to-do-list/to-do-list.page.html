@@ -1,0 +1,83 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>To-Do List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Date and Time Picker -->
+  <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="datetime"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <!-- Tasks List -->
+  <ion-list>
+    <ion-card *ngFor="let task of tasks" class="text-black">
+      
+      <ion-item lines="none">
+        <ion-checkbox 
+          slot="start" 
+          color="success" 
+          [(ngModel)]="task.completed" 
+          (ionChange)="onTaskCheckboxChange(task)">
+        </ion-checkbox>
+        <ion-label>
+          <h1 class="card-title">{{ task.title }}</h1>
+        </ion-label>
+      </ion-item>
+
+      <div class="card-body" [class.completed]="task.completed" style="padding: 15px;">
+        <h4>{{ task.description }}</h4>
+        <hr />
+        <h5>{{ task.task_date | date: 'yyyy-MM-dd' }}</h5>
+        <hr />
+        <h5>Priority Level: {{ task.priority_level }}</h5>
+        <hr />
+        <h5>Progress Level: {{ task.progress_level }}</h5>
+        <hr />
+      </div>
+
+      <!-- Edit and Delete buttons -->
+      <ion-grid style="padding-bottom: 10px;">
+        <ion-row class="ion-justify-content-around ion-align-items-center">
+          <ion-col size="auto">
+            <ion-button [routerLink]="['/tasks', task.id]" >Edit</ion-button>
+          </ion-col>
+          <ion-col size="auto">
+            <ion-button (click)="onDelete(task.id)">Delete</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card>
+  </ion-list>
+
+  <!-- Toast Element -->
+  <ion-toast
+    [isOpen]="showToast"
+    [message]="toastMessage"
+    [duration]="3000"
+    (didDismiss)="showToast = false">
+  </ion-toast>
+
+  <!-- Add Button (Floating Action Button) -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button [routerLink]="['/tasks']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

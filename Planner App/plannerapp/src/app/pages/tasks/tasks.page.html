@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Add Task</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" 
+    style="background-color: rgba(255, 255, 255, 0.9); text-align: center; padding: 30px; border-radius: 15px; width: 400px; margin: auto;">
+    
+    <ion-list>
+
+      <ion-item>
+        <ion-input formControlName="title" placeholder="Title"></ion-input>
+      </ion-item>
+      <span class="error" *ngIf="taskForm.get('title')?.touched && taskForm.get('title')?.errors?.['required']">
+        Must add a title!
+      </span>
+
+      <ion-item>
+        <ion-select formControlName="priority_level" placeholder="Priority Level">
+          <ion-select-option value="Low">Low</ion-select-option>
+          <ion-select-option value="Medium">Medium</ion-select-option>
+          <ion-select-option value="High">High</ion-select-option>
+
+        </ion-select>
+      </ion-item>
+      <span class="error" *ngIf="taskForm.get('priority_level')?.touched && taskForm.get('priority_level')?.errors?.['required']">
+        Must select a priority level!
+      </span>
+
+      <ion-item>
+        <ion-input formControlName="description" placeholder="Description"></ion-input>
+      </ion-item>
+      <span class="error" *ngIf="taskForm.get('description')?.touched && taskForm.get('description')?.errors?.['required']">
+        Must add a description!
+      </span>
+
+      <ion-item>
+        <ion-select formControlName="progress_level" placeholder="Progress Level">
+          <ion-select-option value="Pending">Pending</ion-select-option>
+          <ion-select-option value="Started">Started</ion-select-option>
+          <ion-select-option value="Completed">Completed</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <span class="error" *ngIf="taskForm.get('progress_level')?.touched && taskForm.get('progress_level')?.errors?.['required']">
+        Must select a progress level!
+      </span>
+
+      <ion-item>
+        <ion-datetime formControlName="task_date" presentation="date"></ion-datetime>
+      </ion-item>
+      <span class="error" *ngIf="taskForm.get('task_date')?.touched && taskForm.get('task_date')?.errors?.['required']">
+        Must pick a date!
+      </span>
+
+    </ion-list>
+
+    <br />
+    <ion-button expand="block" type="submit" [disabled]="taskForm.invalid">Add Task</ion-button>
+
+  </form> 
+
+</ion-content>
+
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button default-href="/to-do-list"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
